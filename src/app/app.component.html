@@ -1,14 +1,21 @@
 <div class="top-menu">
 
-    <img class="logo"
-         src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
+  <img class="logo"
+       src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
 
 </div>
 
 
 <div class="courses">
 
- <course-card [course]="course" (courseSelect)="onCourseSelected($event)"></course-card>
+  <course-card
+    *ngFor="let course of courses; index as i; first as isFirst; last as isLast; even as isEven; odd as isOdd"
+    [course]="course" [cardIndex]="i + 1"
+    [class.is-first]="isFirst"
+    [class.is-last]="isLast"
+    [class.is-even]="isEven"
+    [class.is-odd]="isOdd"
+    (courseSelect)="onCourseSelected($event)"></course-card>
 
 </div>
 

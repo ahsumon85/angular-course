@@ -11,6 +11,9 @@ export class CourseCardComponent implements OnInit {
   @Input()
   course: Course;
 
+  @Input()
+  cardIndex: number;
+
 
   @Output('courseSelect')
   courseEventEmitter = new EventEmitter<Course>();
