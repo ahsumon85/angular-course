@@ -12,8 +12,8 @@ export class CourseCardComponent implements OnInit {
   course: Course;
 
 
-  @Output()
-  courseSelect = new EventEmitter<Course>();
+  @Output('courseSelect')
+  courseEventEmitter = new EventEmitter<Course>();
 
   constructor() {
 
@@ -23,7 +23,7 @@ export class CourseCardComponent implements OnInit {
   }
 
   onCourseViewed() {
-    this.courseSelect.emit(this.course);
+    this.courseEventEmitter.emit(this.course);
   }
 
 }

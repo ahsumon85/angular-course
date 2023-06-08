@@ -12,7 +12,7 @@ export class AppComponent {
   course = COURSES[0];
 
 
-  onCourseSelected(course :Course) {
+  onCourseSelected(course) {
     console.log("App Component -- click event.......", course);
   }
 
